@@ -36,7 +36,7 @@
                 <?php } else { ?>
                 <input type="checkbox" name="selected[]" value="<?php echo $category['category_id']; ?>" />
                 <?php } ?></td>
-              <td class="left"><?php echo $category['name']; ?></td>
+              <td class="left"><a href="<?php echo $category['products_link']; ?>"><?php echo $category['name']; ?></a></td>
               <td class="right"><?php echo $category['sort_order']; ?></td>
               <td class="right"><?php foreach ($category['action'] as $action) { ?>
                 [ <a href="<?php echo $action['href']; ?>"><?php echo $action['text']; ?></a> ]

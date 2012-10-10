@@ -1,0 +1,107 @@
+<?php
+// Heading
+$_['heading_title']             = 'Nastavení';
+
+// Text
+$_['text_success']              = 'Úspěch: Nastavení bylo uloženo!';
+$_['text_image_manager']        = 'Správce obrázků';
+$_['text_mail']                 = 'E-mail';
+$_['text_smtp']                 = 'SMTP';
+
+// Entry
+$_['entry_name']                = 'Název obchodu';
+$_['entry_owner']               = 'Majitel obchodu:';
+$_['entry_address']             = 'Adresa:';
+$_['entry_email']               = 'E-mail:';
+$_['entry_telephone']           = 'Telefon:';
+$_['entry_fax']                 = 'Fax:';
+$_['entry_title']               = 'Titulek obchodu:';
+$_['entry_meta_description']    = 'Meta tag popis:';
+$_['entry_layout']              = 'Výchozí šablona:';
+$_['entry_template']            = 'Vzhled:';
+$_['entry_country']             = 'Stát:';
+$_['entry_zone']                = 'Okres / Region:';
+$_['entry_language']            = 'Jazyk:';
+$_['entry_admin_language']      = 'Jazyk administrace:';
+$_['entry_currency']            = 'Měna:<br /><span class="help">Změn výchozí měnu. Vymažte cache a cookies ve Vašem prohlížeči pro zobrazení změn.</span>';
+$_['entry_currency_auto']       = 'Automatická aktualizace kurzů:<br /><span class="help">Obchod automaticky každý den aktualizuje kurzy měn.</span>';
+$_['entry_length_class']        = 'Jednotka míry:';
+$_['entry_weight_class']        = 'Váhová jednotka:';
+$_['entry_catalog_limit'] 	    = 'Výchozí počet položek na stránku (Katalog):<br /><span class="help">Nastavuje kolik položek katalogu se zobrazí na stránce (zboží, kategorie, atd.)</span>';
+$_['entry_admin_limit']   	    = 'Výchozí počet položek na stránku (Admin):<br /><span class="help">Nastavuje kolik administračních položek se zobrazí na stránce (objednávky, zákazníci, atd.)</span>';
+$_['entry_tax']                 = 'Zobrazovat ceny s daní:';
+$_['entry_invoice']             = 'Počáteční číslo faktur.:<br /><span class="help">Nastavuje počáteční index pro číslování faktur.</span>';
+$_['entry_invoice_prefix']      = 'Prefix faktur:<br /><span class="help">Nastavte prefix pro faktury například (FAK-2011-00). ID faktury bude začínat od 1 pro každý unikátní prefix</span>';
+$_['entry_customer_group']      = 'Zákaznická skupina:<br /><span class="help">Výchozí zákaznická skupina.</span>';
+$_['entry_customer_price']      = 'Zobrazit ceny pouze přihlášeným:<br /><span class="help">Zobrazit ceny pouze pokud je uživatel přihlášen.</span>';
+$_['entry_customer_approval']   = 'Schvalovat nové zákazníky:<br /><span class="help">Nedovolit nově registrovaným zákazníkům přihlášení dokud nejsou schváleni.</span>';
+$_['entry_guest_checkout']      = 'Povolit objednávku bez registrace:<br /><span class="help">Povolit zákazníkům objednání zboží i bez registrace. Tato možnost nebude povolena pokud košík obsahuje položky ke stahování.</span>';
+$_['entry_account']             = 'Podmínky registrace:<br /><span class="help">Uživatel musí odsouhlasit podmínky zřízení účtu před jeho vytvořením.</span>';
+$_['entry_checkout']            = 'Obchodní podmínky:<br /><span class="help">Uživatel musí odsouhlasit obchodní podmínky před objednáním.</span>';
+$_['entry_affiliate']           = 'Podmínky partnerského programu:<br /><span class="help">Uživatel musí odsouhlasit podmínky partnerského programu před vytvořením účtu.</span>';
+$_['entry_commission']          = 'Provize v partnerkém programu (%):<br /><span class="help">Výchozí procentuální provize v partnerkém programu.</span>';
+$_['entry_stock_display']       = 'Zobrazit sklad:<br /><span class="help">Zobrazit stav skladu na stránce zboží.</span>';
+$_['entry_stock_warning']       = 'Zobrazit varování "Není na skladě":<br /><span class="help">Zobrazit na stránce košíku upozornění pokud je zboží vyprodáno ale je povoleno objednávání ze skladu. (Varování zobrazí se pokaždé pokud je vypnuto objednávání ze skladu)</span>';
+$_['entry_stock_checkout']      = 'Objednávat ze skladu:<br /><span class="help">Povolit zákazníkům objednávat zboží které není na skladě.</span>';
+$_['entry_stock_status']        = 'Nastavení stavu pro "Vyprodáno":<br /><span class="help">Nastavte výchozí stav který bude vybrán pro vyprodané zboží při editaci zboží.</span>';
+$_['entry_order_status']        = 'Stav objednávky:<br /><span class="help">Výchozí stav nově vytvořené objednávky.</span>';
+$_['entry_complete_status']     = 'Stav hotové objednávky:<br /><span class="help">Nastavte stav objednávky, který musí mít objednávka aby zákazníkovi byly povoleny stahovatelné produkty a dárkové poukazy.</span>';
+$_['entry_return_status']       = 'Stav reklamovaného zboží:<br /><span class="help">Nastavte výchozí stav pro požadavek na vrácení zboží.</span>';
+$_['entry_review']       	    = 'Povolit recenze:<br /><span class="help">Povolit/zakázat přidání nové recenze a zobrazení stávajících</span>';
+$_['entry_download']            = 'Povolit stahování:';
+$_['entry_upload_allowed']      = 'Povolené koncovky při nahrávání souborů:<br /><span class="help">Přidejte koncovky souborů, které je možná nahrát na server. Použijte hodnoty oddělené čárkou.</span>';
+$_['entry_cart_weight']         = 'Zobrazit hmotnost na stránce košíku:<br /><span class="help">Zobrazí hmotnost na stránce s košíkem</span>';
+$_['entry_logo']                = 'Logo obchodu:';
+$_['entry_icon']                = 'Ikona:<br /><span class="help">Ikona by měla být v PNG formátu s rozměry 16px x 16px.</span>';
+$_['entry_image_thumb']         = 'Velikost náhledů pro zboží:';
+$_['entry_image_popup']         = 'Velikost velkých náhledů zboží:';
+$_['entry_image_product']       = 'Velikost seznamu zboží:';
+$_['entry_image_category']      = 'Velikost seznamu kategorií:';
+$_['entry_image_manufacturer']  = 'Velikost seznamu výrobců:';
+$_['entry_image_additional']    = 'Velikost dalších obrázků ke zboží:';
+$_['entry_image_related']       = 'Velikost obrázků podobného zboží:';
+$_['entry_image_compare']       = 'Velikost obrázku v porovnání:';
+$_['entry_image_wishlist']      = 'Velikost obrázku v Wish Listu:';
+$_['entry_image_cart']          = 'Velikost obrázku v košíku:';
+$_['entry_mail_protocol']       = 'E-mailový protokol:<span class="help">Vyberte \'Mail\' pouze v případě že server blokuje php mail funkci.';
+$_['entry_mail_parameter']      = 'Parametry e-mailu:<span class="help">Pokud používáte \'Mail\', zde můžete zadat další parametry (např. "-femail@storeaddress.com".';
+$_['entry_smtp_host']           = 'SMTP host:';
+$_['entry_smtp_username']       = 'SMTP uživatel:';
+$_['entry_smtp_password']       = 'SMTP heslo:';
+$_['entry_smtp_port']           = 'SMTP port:';
+$_['entry_smtp_timeout']        = 'SMTP timeout:';
+$_['entry_account_mail']        = 'E-mail s upozorněním na nový účet:<br /><span class="help">V případě vytvoření nového uživatelského účtu se pošle e-mailová zpráva majiteli obchodu.</span>';
+$_['entry_alert_mail']          = 'E-mail s upozorněním na objednávku:<br /><span class="help">V případě nové objednávky se pošle e-mailová zpráva majiteli obchodu.</span>';
+$_['entry_alert_emails']        = 'Další e-mailové adresy:<br /><span class="help">Další e-mailové adresy na které si přejete zasílat e-maily s upozorněním, mimo hlavního e-mailu obchodu. (oddělené čárkou)</span>';
+$_['entry_use_ssl']             = 'Použít SSL:<br /><span class="help">V případě že chcete použít SSL zkontrolujte že server má nastaven SSL certifikát a že je nastavena SSL adresa v konfiguračním souboru.</span>';
+$_['entry_seo_url']             = 'Použít SEO adresy:<br /><span class="help">Pro použití SEO adres je nutné mít povolen modul mod-rewrite v apache serveru a přejmenovat soubor "htaccess.txt" v kořenovém adresáři na ".htaccess".</span>';
+$_['entry_maintenance']         = 'Maintenance Mode:<br /><span class="help">Prevents customers from browsing your store. They will instead see a maintenance message. If logged in as admin, you will see the store as normal.</span>';
+$_['entry_encryption']          = 'Šifrofací klíč:<br /><span class="help">Prosím zadejte tajný klíč, který bude použit pro šifrování osobních informací při zpracování objednávek.</span>';
+$_['entry_compression']         = 'Výstupní úroveň komprese:<br /><span class="help">Pro efektivnější přenos dat ke klientovi je použite GZIP komprese. Úroveň komprese musí být mezi 0 - 9</span>';
+$_['entry_error_display']       = 'Zobrazovat chyby:';
+$_['entry_error_log']           = 'Zaznamenávat chyby:';
+$_['entry_error_filename']      = 'Jméno souboru pro záznam:';
+$_['entry_google_analytics']    = 'Google Analytics kód:<br /><span class="help">Příhlašte se ke svému <a onclick="window.open(\'http://www.google.com/analytics/\');"><u>Google Analytics</u></a> účtu a po vytvoření weového profilu zkopírujte sledovací kód do tohoto pole.</span>';
+
+// Error
+$_['error_warning']      	    = 'Varování: Prosím zkontrolujte pečlivě formulář neobsahuje-li chyby!';
+$_['error_permission']          = 'Varování: Nemáte opravnění na změnu nastavení!';
+$_['error_name']                = 'Název obchodu musí být delší než 3 a kratší než 32 znaků!';
+$_['error_owner']               = 'Jméno majitele obchodu musí být delší než 3 znaky a kratší než 64 znaků!';
+$_['error_address']             = 'Adresa obchodu musí být delší než 10 znaků a kreatší než 256 znaků!';	
+$_['error_email']               = 'E-mailová adresa není platná!';
+$_['error_telephone']           = 'Telefon musí být delší než 3 znaky a kratší než 32 znaků!';
+$_['error_title']               = 'Titulek obchodu musí být delší než 3 a kratší než 32 znaků!';
+$_['error_limit']       	    = 'Limit je povinná položka!';
+$_['error_image_thumb']         = 'Velikost náhledu zboží je povinný údaj!';
+$_['error_image_popup']         = 'Velikost velkých náhledů  je povinný údaj!';
+$_['error_image_product']       = 'Velikost seznamu zboží je povinný údaj!';
+$_['error_image_category']      = 'Velikost seznamu kategorií je povinný údaj!';
+$_['error_image_manufacturer']  = 'Velikost seznamu výrobců je povinný údaj!';
+$_['error_image_additional']    = 'Velikost dalších obrázků zboží je povinný údaj!';
+$_['error_image_related']       = 'Velikost obrázků podobného zboží je povinný údaj!';
+$_['error_image_compare']       = 'Velikost obrázků v porovnání je povinný údaj!';
+$_['error_image_wishlist']      = 'Velikost obrázků Wish Listu je povinný údaj!';
+$_['error_image_cart']          = 'Velikost obrázků v košíku je povinný údaj!';
+$_['error_error_filename']      = 'Název souboru pro záznam je povinná položka!';
+?>

@@ -5,7 +5,9 @@
     <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
     <?php } ?>
   </div>
-  <?php if ($error_warning) { ?>
+  <?php if (is_array($error_warning)) { foreach ($error_warning as $msg): ?>
+  <div class="warning"><?php echo $msg; ?></div>
+  <?php endforeach; } elseif ($error_warning) { ?>
   <div class="warning"><?php echo $error_warning; ?></div>
   <?php } ?>
   <?php if ($success) { ?>
@@ -14,7 +16,17 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/product.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="location = '<?php echo $insert; ?>'" class="button"><?php echo $button_insert; ?></a><a onclick="$('#form').attr('action', '<?php echo $copy; ?>'); $('#form').submit();" class="button"><?php echo $button_copy; ?></a><a onclick="$('form').submit();" class="button"><?php echo $button_delete; ?></a></div>
+      <div class="buttons">
+          <select id="setupCategory" name="category_id" data-url="<?php echo $categories_url; ?>">
+              <option>-- Nastavit kategorii --</option>
+              <?php foreach ($categories as $category): ?>
+                <option value="<?php echo (int)$category['category_id']; ?>"><?php echo htmlspecialchars($category['name']); ?></option>
+              <?php endforeach; ?>
+          </select>
+          <a onclick="location = '<?php echo $insert; ?>'" class="button"><?php echo $button_insert; ?></a>
+          <a onclick="$('#form').attr('action', '<?php echo $copy; ?>'); $('#form').submit();" class="button"><?php echo $button_copy; ?></a>
+          <a onclick="$('form').submit();" class="button"><?php echo $button_delete; ?></a>
+      </div>
     </div>
     <div class="content">
       <form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form">
@@ -116,50 +128,58 @@
     </div>
   </div>
 </div>
+<script>
+    $('#setupCategory').change(function () {
+        var form = $('#form');
+        form.attr('action', $(this).data('url'));
+        $(this).appendTo(form);
+        form.submit();
+    });
+</script>
 <script type="text/javascript"><!--
 function filter() {
 	url = 'index.php?route=catalog/product&token=<?php echo $token; ?>';
-	
+
 	var filter_name = $('input[name=\'filter_name\']').attr('value');
-	
+
 	if (filter_name) {
 		url += '&filter_name=' + encodeURIComponent(filter_name);
 	}
-	
+
 	var filter_model = $('input[name=\'filter_model\']').attr('value');
-	
+
 	if (filter_model) {
 		url += '&filter_model=' + encodeURIComponent(filter_model);
 	}
-	
+
 	var filter_price = $('input[name=\'filter_price\']').attr('value');
-	
+
 	if (filter_price) {
 		url += '&filter_price=' + encodeURIComponent(filter_price);
 	}
-	
+
 	var filter_quantity = $('input[name=\'filter_quantity\']').attr('value');
-	
+
 	if (filter_quantity) {
 		url += '&filter_quantity=' + encodeURIComponent(filter_quantity);
 	}
-	
+
 	var filter_status = $('select[name=\'filter_status\']').attr('value');
-	
+
 	if (filter_status != '*') {
 		url += '&filter_status=' + encodeURIComponent(filter_status);
-	}	
+	}
 
 	location = url;
 }
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 $('#form input').keydown(function(e) {
 	if (e.keyCode == 13) {
 		filter();
 	}
 });
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 $('input[name=\'filter_name\']').autocomplete({
 	delay: 0,
@@ -167,7 +187,7 @@ $('input[name=\'filter_name\']').autocomplete({
 		$.ajax({
 			url: 'index.php?route=catalog/product/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request.term),
 			dataType: 'json',
-			success: function(json) {		
+			success: function(json) {
 				response($.map(json, function(item) {
 					return {
 						label: item.name,
@@ -176,10 +196,10 @@ $('input[name=\'filter_name\']').autocomplete({
 				}));
 			}
 		});
-	}, 
+	},
 	select: function(event, ui) {
 		$('input[name=\'filter_name\']').val(ui.item.label);
-						
+
 		return false;
 	}
 });
@@ -190,7 +210,7 @@ $('input[name=\'filter_model\']').autocomplete({
 		$.ajax({
 			url: 'index.php?route=catalog/product/autocomplete&token=<?php echo $token; ?>&filter_model=' +  encodeURIComponent(request.term),
 			dataType: 'json',
-			success: function(json) {		
+			success: function(json) {
 				response($.map(json, function(item) {
 					return {
 						label: item.model,
@@ -199,12 +219,12 @@ $('input[name=\'filter_model\']').autocomplete({
 				}));
 			}
 		});
-	}, 
+	},
 	select: function(event, ui) {
 		$('input[name=\'filter_model\']').val(ui.item.label);
-						
+
 		return false;
 	}
 });
-//--></script> 
+//--></script>
 <?php echo $footer; ?>

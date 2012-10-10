@@ -1,17 +1,53 @@
 <?php
-abstract class Model {
+
+
+/**
+ * @property \Loader $load
+ * @property \Nette\DI\Container|\SystemContainer $nette
+ * @property \Nette\Database\Connection $database
+ * @property \Language $language
+ * @property \DB $db
+ * @property \Cache $cache
+ * @property \Config $config
+ */
+abstract class Model extends Nette\Object
+{
+	/**
+	 * @var \Registry
+	 */
 	protected $registry;
-	
-	public function __construct($registry) {
+
+
+	/**
+	 * @param \Registry $registry
+	 */
+	public function __construct($registry)
+	{
 		$this->registry = $registry;
 	}
-	
-	public function __get($key) {
-		return $this->registry->get($key);
+
+
+
+	/**
+	 * @param string $key
+	 * @return object
+	 */
+	public function &__get($key)
+	{
+		/** @var \Loader $loader */
+		$loader = $this->registry->get('load');
+		$service = $loader->__get($key);
+		return $service;
 	}
-	
-	public function __set($key, $value) {
+
+
+
+	/**
+	 * @param string $key
+	 * @param object $value
+	 */
+	public function __set($key, $value)
+	{
 		$this->registry->set($key, $value);
 	}
 }
-?>

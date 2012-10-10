@@ -1,12 +1,15 @@
 <?php
-class ControllerPaymentAlertPay extends Controller {
-	protected function index() {
+class ControllerPaymentAlertPay extends Controller
+{
+
+	protected function index()
+	{
 		$this->data['button_confirm'] = $this->language->get('button_confirm');
 
 		$this->load->model('checkout/order');
-		
+
 		$order_info = $this->model_checkout_order->getOrder($this->session->data['order_id']);
-		
+
 		$this->data['action'] = 'https://www.alertpay.com/PayProcess.aspx';
 
 		$this->data['ap_merchant'] = $this->config->get('alertpay_merchant');
@@ -22,17 +25,19 @@ class ControllerPaymentAlertPay extends Controller {
 			$this->template = $this->config->get('config_template') . '/template/payment/alertpay.tpl';
 		} else {
 			$this->template = 'default/template/payment/alertpay.tpl';
-		}		
-		
+		}
+
 		$this->render();
 	}
-	
-	public function callback() {
+
+
+
+	public function callback()
+	{
 		if (isset($this->request->post['ap_securitycode']) && ($this->request->post['ap_securitycode'] == $this->config->get('alertpay_security'))) {
 			$this->load->model('checkout/order');
-			
+
 			$this->model_checkout_order->confirm($this->request->post['ap_itemcode'], $this->config->get('alertpay_order_status_id'));
 		}
 	}
 }
-?>

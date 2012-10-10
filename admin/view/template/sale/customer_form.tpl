@@ -196,7 +196,7 @@
             </table>
             <script type="text/javascript"><!--
 		    $('select[name=\'address[<?php echo $address_row; ?>][zone_id]\']').load('index.php?route=sale/customer/zone&token=<?php echo $token; ?>&country_id=<?php echo $address['country_id']; ?>&zone_id=<?php echo $address['zone_id']; ?>');
-		    //--></script> 
+		    //--></script>
           </div>
           <?php $address_row++; ?>
           <?php } ?>
@@ -274,10 +274,10 @@
 <script type="text/javascript"><!--
 var address_row = <?php echo $address_row; ?>;
 
-function addAddress() {	
+function addAddress() {
 	html  = '<div id="tab-address-' + address_row + '" class="vtabs-content" style="display: none;">';
 	html += '  <input type="hidden" name="address[' + address_row + '][address_id]" value="" />';
-	html += '  <table class="form">'; 
+	html += '  <table class="form">';
 	html += '    <tr>';
     html += '	   <td><?php echo $entry_firstname; ?></td>';
     html += '	   <td><input type="text" name="address[' + address_row + '][firstname]" value="" /></td>';
@@ -316,7 +316,7 @@ function addAddress() {
     html += '    </tr>';
     html += '    <tr>';
     html += '      <td><?php echo $entry_zone; ?></td>';
-    html += '      <td><select name="address[' + address_row + '][zone_id]"><option value="false"><?php echo $this->language->get('text_none'); ?></option></select></td>';
+    html += '      <td><select name="address[' + address_row + '][zone_id]"><option value="false"><?php echo $text_none; ?></option></select></td>';
     html += '    </tr>';
 	html += '    <tr>';
     html += '      <td><?php echo $entry_default; ?></td>';
@@ -324,24 +324,24 @@ function addAddress() {
     html += '    </tr>';
     html += '  </table>';
     html += '</div>';
-	
+
 	$('#tab-general').append(html);
-	
+
 	$('#address-add').before('<a href="#tab-address-' + address_row + '" id="address-' + address_row + '"><?php echo $tab_address; ?> ' + address_row + '&nbsp;<img src="view/image/delete.png" alt="" onclick="$(\'#vtabs a:first\').trigger(\'click\'); $(\'#address-' + address_row + '\').remove(); $(\'#tab-address-' + address_row + '\').remove(); return false;" /></a>');
-		 
+
 	$('.vtabs a').tabs();
-	
+
 	$('#address-' + address_row).trigger('click');
-	
+
 	address_row++;
 }
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 $('#transaction .pagination a').live('click', function() {
 	$('#transaction').load(this.href);
-	
+
 	return false;
-});			
+});
 
 $('#transaction').load('index.php?route=sale/customer/transaction&token=<?php echo $token; ?>&customer_id=<?php echo $customer_id; ?>');
 
@@ -362,19 +362,19 @@ function addTransaction() {
 		},
 		success: function(html) {
 			$('#transaction').html(html);
-			
+
 			$('#tab-transaction input[name=\'amount\']').val('');
 			$('#tab-transaction input[name=\'description\']').val('');
 		}
 	});
 }
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 $('#reward .pagination a').live('click', function() {
 	$('#reward').load(this.href);
-	
+
 	return false;
-});			
+});
 
 $('#reward').load('index.php?route=sale/customer/reward&token=<?php echo $token; ?>&customer_id=<?php echo $customer_id; ?>');
 
@@ -395,7 +395,7 @@ function addRewardPoints() {
 		},
 		success: function(html) {
 			$('#reward').html(html);
-								
+
 			$('#tab-reward input[name=\'points\']').val('');
 			$('#tab-reward input[name=\'description\']').val('');
 		}
@@ -410,28 +410,28 @@ function addBlacklist(ip) {
 		data: 'ip=' + encodeURIComponent(ip),
 		beforeSend: function() {
 			$('.success, .warning').remove();
-			
-			$('.box').before('<div class="attention"><img src="view/image/loading.gif" alt="" /> Please wait!</div>');			
+
+			$('.box').before('<div class="attention"><img src="view/image/loading.gif" alt="" /> Please wait!</div>');
 		},
 		complete: function() {
 			$('.attention').remove();
-		},			
+		},
 		success: function(json) {
 			if (json['error']) {
 				 $('.box').before('<div class="warning" style="display: none;">' + json['error'] + '</div>');
-				
+
 				$('.warning').fadeIn('slow');
 			}
-						
+
 			if (json['success']) {
                 $('.box').before('<div class="success" style="display: none;">' + json['success'] + '</div>');
-				
+
 				$('.success').fadeIn('slow');
-				
+
 				$('#' + ip.replace(/\./g, '-')).replaceWith('<a id="' + ip.replace(/\./g, '-') + '" onclick="removeBlacklist(\'' + ip + '\');"><?php echo $text_remove_blacklist; ?></a>');
 			}
 		}
-	});	
+	});
 }
 
 function removeBlacklist(ip) {
@@ -442,32 +442,32 @@ function removeBlacklist(ip) {
 		data: 'ip=' + encodeURIComponent(ip),
 		beforeSend: function() {
 			$('.success, .warning').remove();
-			
-			$('.box').before('<div class="attention"><img src="view/image/loading.gif" alt="" /> Please wait!</div>');				
+
+			$('.box').before('<div class="attention"><img src="view/image/loading.gif" alt="" /> Please wait!</div>');
 		},
 		complete: function() {
 			$('.attention').remove();
-		},			
+		},
 		success: function(json) {
 			if (json['error']) {
 				 $('.box').before('<div class="warning" style="display: none;">' + json['error'] + '</div>');
-				
+
 				$('.warning').fadeIn('slow');
 			}
-			
+
 			if (json['success']) {
 				 $('.box').before('<div class="success" style="display: none;">' + json['success'] + '</div>');
-				
+
 				$('.success').fadeIn('slow');
-				
+
 				$('#' + ip.replace(/\./g, '-')).replaceWith('<a id="' + ip.replace(/\./g, '-') + '" onclick="addBlacklist(\'' + ip + '\');"><?php echo $text_add_blacklist; ?></a>');
 			}
 		}
-	});	
+	});
 };
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 $('.htabs a').tabs();
 $('.vtabs a').tabs();
-//--></script> 
+//--></script>
 <?php echo $footer; ?>
