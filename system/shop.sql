@@ -1446,7 +1446,7 @@ INSERT INTO `setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `seria
 (25102,	0,	'bank_transfer',	'bank_transfer_geo_zone_id',	'4',	0),
 (25103,	0,	'bank_transfer',	'bank_transfer_status',	'1',	0),
 (25104,	0,	'bank_transfer',	'bank_transfer_sort_order',	'',	0),
-(25544,	0,	'config',	'config_template',	'red152',	0),
+(25544,	0,	'config',	'config_template',	'default',	0),
 (25543,	0,	'config',	'config_meta_description',	'',	0),
 (25542,	0,	'config',	'config_title',	'Obchod',	0),
 (25541,	0,	'config',	'config_fax',	'',	0),
